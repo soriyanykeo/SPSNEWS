@@ -19,14 +19,8 @@ class NewsDetailViewController: UIViewController{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.title = "SPS NEWS DETAIL"
-        loadData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    func loadData(){
+        
+        //Display data to IBOutlet 
         newsObject.loadCoverImageURL({ (success, image) in
             if success == true{
                 self.coverImage.image = image
@@ -34,6 +28,11 @@ class NewsDetailViewController: UIViewController{
         })
         newsTitleLabel.text = newsObject.title
         newsDetailContent.loadHTMLString(newsObject.body!, baseURL: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }
 

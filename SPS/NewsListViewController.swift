@@ -31,7 +31,6 @@ class NewsListViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 if results != nil{
                     self.dataCount = results!.count
                     self.data = results
-                    print("data:\(self.data)")
                     dispatch_async(dispatch_get_main_queue()) {
                         self.tableview.reloadData()
                     }
