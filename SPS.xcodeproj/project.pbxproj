@@ -17,6 +17,8 @@
 		237662E41D33011D00AC9F4D /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237662E31D33011D00AC9F4D /* News.swift */; };
 		237662E71D3301A400AC9F4D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237662E61D3301A400AC9F4D /* Constants.swift */; };
 		237662E91D330AA000AC9F4D /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237662E81D330AA000AC9F4D /* NewsDetailViewController.swift */; };
+		23C1BD2D1D33212F00BA0DD5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C1BD2B1D33212F00BA0DD5 /* Fabric.framework */; };
+		23C1BD2E1D33213000BA0DD5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C1BD2C1D33212F00BA0DD5 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		237662E31D33011D00AC9F4D /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = DataStructures/News.swift; sourceTree = "<group>"; };
 		237662E61D3301A400AC9F4D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utitilities/Constants.swift; sourceTree = "<group>"; };
 		237662E81D330AA000AC9F4D /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		23C1BD2B1D33212F00BA0DD5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		23C1BD2C1D33212F00BA0DD5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C1BD2E1D33213000BA0DD5 /* Crashlytics.framework in Frameworks */,
+				23C1BD2D1D33212F00BA0DD5 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,7 @@
 		237662BE1D32FFC600AC9F4D /* SPS */ = {
 			isa = PBXGroup;
 			children = (
+				23C1BD2A1D33212000BA0DD5 /* Libraries */,
 				237662E51D33017900AC9F4D /* Utitlities */,
 				237662E21D33010700AC9F4D /* DataStructures */,
 				237662DF1D33000F00AC9F4D /* APIsServices */,
@@ -132,6 +139,15 @@
 			name = Utitlities;
 			sourceTree = "<group>";
 		};
+		23C1BD2A1D33212000BA0DD5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				23C1BD2B1D33212F00BA0DD5 /* Fabric.framework */,
+				23C1BD2C1D33212F00BA0DD5 /* Crashlytics.framework */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,6 +158,7 @@
 				237662B81D32FFC600AC9F4D /* Sources */,
 				237662B91D32FFC600AC9F4D /* Frameworks */,
 				237662BA1D32FFC600AC9F4D /* Resources */,
+				23C1BD291D3320FD00BA0DD5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -227,6 +244,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23C1BD291D3320FD00BA0DD5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 6c838cfcee6da2a30af31bb4001c62029714ec68 1b187f0ad607ba16c75ef1d28fcc4796ec1008c516fd7270eabbd2ad2562899a";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		237662B81D32FFC600AC9F4D /* Sources */ = {
@@ -369,6 +402,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SPS",
+				);
 				INFOPLIST_FILE = SPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soriyany.SPS;
@@ -380,6 +417,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SPS",
+				);
 				INFOPLIST_FILE = SPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soriyany.SPS;
